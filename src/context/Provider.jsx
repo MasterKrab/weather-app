@@ -11,7 +11,7 @@ const WeatherProvider = ({ children }) => {
   const [farenheit, setFarenheit] = useState(false);
   const [error, setError] = useState(false);
 
-  const corsUrl = 'http://api.allorigins.win/get?url=';
+  const corsUrl = 'https://api.allorigins.win/get?url=';
   const apiUrl = 'https://www.metaweather.com/api/location/';
   const url = `${corsUrl}${apiUrl}`;
 
