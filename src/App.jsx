@@ -15,8 +15,8 @@ const App = () => (
     <WeatherProvider>
       <Header />
       <Main />
+      <Footer />
     </WeatherProvider>
-    <Footer />
   </ThemeProvider>
 );
 

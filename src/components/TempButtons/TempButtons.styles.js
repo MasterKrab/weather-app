@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import hover from '../../utils/hover';
 
 export const Buttons = styled.div`
   display: flex;
@@ -21,4 +22,5 @@ export const Button = styled.button`
   height: 40px;
   font-size: 1.25rem;
   font-weight: bold;
+  ${hover};
 `;

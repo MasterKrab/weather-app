@@ -99,7 +99,7 @@ export const Progress = styled.div`
 `;
 
 export const Bar = styled.div`
-  background-color: #ffec65;
+  background-color: ${({ theme }) => theme.bar};
   width: ${({ progress }) => progress};
   height: 100%;
   border-radius: 80px;

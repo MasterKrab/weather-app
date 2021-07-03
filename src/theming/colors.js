@@ -6,6 +6,9 @@ const colors = {
   buttonColor: '#6E707A',
   buttonColor2: '#585676',
   buttonColor3: '#E7E7EB',
+  submit: '#3c47e9',
+  error: '#DD3C3F',
+  bar: '#ffec65',
 };
 
 export default colors;

@@ -22,8 +22,8 @@ import {
   Input,
   Submit,
   City,
-  GlobalStyles,
 } from './Header.styles';
+import Error from '../Error/Error';
 import backgroundImage from '../../assets/Cloud-background.png';
 import currentLocation from '../../assets/current-location.svg';
 import locationImage from '../../assets/location.svg';
@@ -55,7 +55,6 @@ const Header = () => {
   return (
     location && (
       <StyledHeader image={backgroundImage}>
-        <GlobalStyles active={openForm} />
         <Buttons>
           <SearchButton onClick={handleClick} widthEl="165px" heightEl="40px">
             Search for places
@@ -84,6 +83,7 @@ const Header = () => {
           <Location image={locationImage}>{location.title}</Location>
         </Bottom>
         <SearchForm onSubmit={handleSubmit} open={openForm}>
+          <Error />
           <CloseButton
             onClick={handleClick}
             image={closeImage}

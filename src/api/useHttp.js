@@ -1,4 +1,4 @@
-const useHttp = async (url, setIsLoading) => {
+const useHttp = async (url, setIsLoading, setError) => {
   try {
     setIsLoading(true);
     const res = await fetch(url);
@@ -6,6 +6,7 @@ const useHttp = async (url, setIsLoading) => {
     setIsLoading(false);
     return data;
   } catch (error) {
+    setError(true);
     await Promise.reject(error);
   }
   return null;

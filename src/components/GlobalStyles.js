@@ -12,6 +12,19 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Raleway', sans-serif;
   }
 
+  body{
+     &::-webkit-scrollbar{
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track{
+      background-color: ${({ theme }) => theme.elementColor};
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 5px;
+      background-color: ${({ theme }) => theme.textColor};
+    }
+  }
+
   *,
   *::before,
   *::after{
@@ -42,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
 
     @media screen and (min-width: 768px){
       grid-template-columns: var(--header-width) 1fr;
-      grid-template-rows: 1fr 100px;
+      grid-template-rows: 1fr 150px;
     }
   }
 `;

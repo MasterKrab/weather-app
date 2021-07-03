@@ -1,13 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
-
-export const GlobalStyles = createGlobalStyle`
-  @media screen and (max-width: 768px){
-    body{
-      height: ${({ active }) => (active ? '100%' : 'none')};
-      overflow-y: ${({ active }) => (active ? 'hidden' : 'visible')};
-    }
-  }
-`;
+import styled from 'styled-components';
+import hover from '../../utils/hover';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -52,6 +44,7 @@ export const SearchButton = styled.button`
   width: ${({ widthEl }) => widthEl};
   height: ${({ heightEl }) => heightEl};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  ${hover};
 `;
 
 export const CurrentLocation = styled(SearchButton)`
@@ -60,6 +53,7 @@ export const CurrentLocation = styled(SearchButton)`
   background-repeat: no-repeat;
   background-size: 60%;
   border-radius: 50%;
+  ${hover};
 `;
 
 export const Content = styled.section`
@@ -147,6 +141,7 @@ export const CloseButton = styled.button`
   background-repeat: no-repeat;
   width: 18px;
   height: 18px;
+  ${hover};
 `;
 
 export const SearchContainer = styled.div`
@@ -188,7 +183,7 @@ export const Input = styled.input`
 `;
 
 export const Submit = styled.button`
-  background-color: #3c47e9;
+  background-color: ${({ theme }) => theme.submit};
   width: 86px;
   height: 48px;
   color: inherit;

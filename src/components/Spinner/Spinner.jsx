@@ -5,9 +5,9 @@ import spinner from '../../assets/spinner.svg';
 import Image from './Spinner.styles';
 
 const Spinner = () => {
-  const { isLoading } = useContext(WeatherContext);
+  const { isLoading, error } = useContext(WeatherContext);
 
-  return isLoading && <Image src={spinner} alt="Loading" role="alert" />;
+  return isLoading && !error && <Image src={spinner} alt="Loading" role="alert" />;
 };
 
 export default Spinner;
