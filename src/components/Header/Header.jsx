@@ -45,12 +45,16 @@ const Header = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    searchLocation(`query=${searchForm}`);
+    await searchLocation(`query=${searchForm}`);
+    setOpenForm(false);
   };
 
   const handleChange = (e) => setSearchForm(e.target.value);
 
-  const handleCity = (woeid) => getLocationData(woeid);
+  const handleCity = async (woeid) => {
+    await getLocationData(woeid);
+    setOpenForm(false);
+  };
 
   return (
     location && (
