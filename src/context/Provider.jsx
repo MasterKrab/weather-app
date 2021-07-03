@@ -11,16 +11,17 @@ const WeatherProvider = ({ children }) => {
   const [farenheit, setFarenheit] = useState(false);
   const [error, setError] = useState(false);
 
-  // https://weather-app-six-psi.vercel.app/
+  const corsUrl = 'http://api.allorigins.win/get?url=';
   const apiUrl = 'https://www.metaweather.com/api/location/';
+  const url = `${corsUrl}${apiUrl}`;
 
   const getLocationData = async (woeid) => {
-    const locationData = await useHttp(`${apiUrl}${woeid}/`, setIsLoading, setError);
+    const locationData = await useHttp(`${url}${woeid}/`, setIsLoading, setError);
     setLocation(locationData);
   };
 
   const searchLocation = async (params) => {
-    const locationData = await useHttp(`${apiUrl}search/?${params}`, setIsLoading, setError);
+    const locationData = await useHttp(`${url}search/?${params}`, setIsLoading, setError);
     setLocationSearch(locationData);
     if (locationData.length) getLocationData(locationData[0].woeid);
     else setError(true);
