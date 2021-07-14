@@ -193,6 +193,7 @@ export const City = styled.button`
   position: relative;
   display: block;
   color: inherit;
+  width: 100%;
   max-width: 367px;
   height: 64px;
   border: 1px solid transparent;
