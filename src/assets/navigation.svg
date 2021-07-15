@@ -1,10 +1,1 @@
-<svg width="200" height="198" xmlns="http://www.w3.org/2000/svg">
- <!-- Created with UXWing SVG Editor - https://uxwing.com/svg-icon-editor/ -->
-
- <g>
-  <title>Layer 1</title>
-  <path id="svg_21" d="m270.933063,197.619715" opacity="0.5" stroke-width="null" stroke="#616475" fill="#616475"/>
-  <ellipse ry="88.610427" rx="87.499324" id="svg_32" cy="98.558999" cx="100.000002" stroke-width="null" fill="#616475"/>
-  <path stroke="null" transform="rotate(-19 102.3368225097656,89.30923461914062) " id="svg_37" d="m69.243502,126.075412c-22.119372,1.092113 19.090676,-74.157983 27.389163,-73.540338c8.298487,0.617645 12.373096,35.87861 12.470741,35.869548c-1.16015,-1.482078 34.350638,7.881512 32.721297,15.464498c-1.629341,7.582986 -50.46183,21.11418 -72.581201,22.206292z" fill-opacity="null" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="198"><g><title>Layer 1</title><path id="svg_21" fill="#616475" stroke="#616475" stroke-width="null" d="m270.933063,197.619715" opacity=".5"/><ellipse id="svg_32" cx="100" cy="98.559" fill="#616475" stroke-width="null" rx="87.499" ry="88.61"/><path id="svg_37" fill="#fff" fill-opacity="null" stroke="null" stroke-opacity="null" stroke-width="null" d="m69.243502,126.075412c-22.119372,1.092113 19.090676,-74.157983 27.389163,-73.540338c8.298487,0.617645 12.373096,35.87861 12.470741,35.869548c-1.16015,-1.482078 34.350638,7.881512 32.721297,15.464498c-1.629341,7.582986 -50.46183,21.11418 -72.581201,22.206292z" transform="rotate(-19 102.3368225097656,89.30923461914062)"/></g></svg>
