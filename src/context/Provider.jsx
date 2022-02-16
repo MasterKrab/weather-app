@@ -5,7 +5,7 @@ import WeatherContext from './weather';
 import useHttp from '../api/useHttp';
 
 const WeatherProvider = ({ children }) => {
-  const [locationSearch, setLocationSearch] = useState([]);
+  const [locationSearch, setLocationSearch] = useState();
   const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [farenheit, setFarenheit] = useState(false);
@@ -16,12 +16,20 @@ const WeatherProvider = ({ children }) => {
   const url = `${corsUrl}${apiUrl}`;
 
   const getLocationData = async (woeid) => {
-    const locationData = await useHttp(`${url}${woeid}/`, setIsLoading, setError);
+    const locationData = await useHttp(
+      `${url}${woeid}/`,
+      setIsLoading,
+      setError,
+    );
     setLocation(locationData);
   };
 
   const searchLocation = async (params) => {
-    const locationData = await useHttp(`${url}search/?${params}`, setIsLoading, setError);
+    const locationData = await useHttp(
+      `${url}search/?${params}`,
+      setIsLoading,
+      setError,
+    );
     setLocationSearch(locationData);
     if (locationData.length) getLocationData(locationData[0].woeid);
     else setError(true);
@@ -30,15 +38,20 @@ const WeatherProvider = ({ children }) => {
   const defaultWeather = () => getLocationData(565346);
 
   const success = async (position) => {
-    await searchLocation(`lattlong=${position.coords.latitude},${position.coords.longitude}`);
+    await searchLocation(
+      `lattlong=${position.coords.latitude},${position.coords.longitude}`,
+    );
   };
 
-  const getCurrentLocation = () => {
+  const getCurrentLocation = (fallback = true) => {
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(success, defaultWeather);
-    else defaultWeather();
+    else if (fallback) defaultWeather();
   };
 
-  useEffect(getCurrentLocation, []);
+  useEffect(() => {
+    defaultWeather();
+    getCurrentLocation(false);
+  }, []);
 
   return (
     location && (
