@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Card = styled.section`
+  display: flex;
+  flex-direction: column;
   background-color: ${({ theme }) => theme.elementColor};
   height: 177px;
   text-align: center;
@@ -9,16 +11,20 @@ export const Card = styled.section`
 
 export const Title = styled.h2`
   font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 export const Image = styled.img`
   width: 56.44px;
+  margin-top: auto;
+  margin-bottom: auto;
 `;
 
 export const Temp = styled.p`
   display: flex;
   justify-content: space-between;
-  margin-top: 0.7rem;
+  margin-top: auto;
   margin-bottom: 0;
 `;
 
